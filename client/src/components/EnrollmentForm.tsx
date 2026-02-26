@@ -23,7 +23,7 @@ import {
 import { API_BASE_URL } from "@/config/api";
 import { switchNetworks } from "@/utils/switchNetwork";
 import { ERC20_ABI } from "@/config/abi";
-// import { RECIPIENT_ADDRESS, TOKEN_CONTRACT_ADDRESS } from "@/config/env";
+import { RECIPIENT_ADDRESS, TOKEN_CONTRACT_ADDRESS } from "@/config/env";
 import useDeodPrice from "@/hooks/use-deodPrice";
 
 interface SlotData {
@@ -61,8 +61,6 @@ export default function EnrollmentForm({
     const [selectedSlot, setSelectedSlot] = useState<string>("");
     const { toast } = useToast();
 
-const TOKEN_CONTRACT_ADDRESS = import.meta.env.VITE_DEOD_TOKEN_CONTRACT;
-const RECIPIENT_ADDRESS = import.meta.env.VITE_RECIPIENT_ADDRESS;
     // Fetch available slots
     const {
         data: slotsData,

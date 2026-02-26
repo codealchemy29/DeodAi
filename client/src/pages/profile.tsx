@@ -10,7 +10,7 @@ import {
     DialogHeader,
     DialogTitle,
 } from "@/components/ui/dialog";
-// import { CLAIM_URL } from "@/config/env";
+import { CLAIM_URL } from "@/config/env";
 
 export default function Profile() {
     const [user, setUser] = useState<any>(null);
@@ -21,8 +21,6 @@ export default function Profile() {
 
     const authToken = localStorage.getItem("token");
 
-    const CLAIM_URL = import.meta.env.VITE_BIZAISKILL;
-    
     useEffect(() => {
         getMe().then((data) => {
             if (!data) {
