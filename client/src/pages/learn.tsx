@@ -45,11 +45,11 @@ declare global {
 }
 import { API_BASE_URL } from "@/config/api";
 import { ERC20_ABI } from "@/config/abi";
-import {
-    CLAIM_URL,
-    TOKEN_CONTRACT_ADDRESS,
-    RECIPIENT_ADDRESS,
-} from "@/config/env";
+// import {
+//     CLAIM_URL,
+//     TOKEN_CONTRACT_ADDRESS,
+//     RECIPIENT_ADDRESS,
+// } from "@/config/env";
 import { switchNetworks } from "@/utils/switchNetwork";
 import useDeodPrice from "@/hooks/use-deodPrice";
 
@@ -199,6 +199,11 @@ export default function Learn() {
     const [purchasedPackageIds, setPurchasedPackageIds] = useState<string[]>(
         [],
     );
+
+    const CLAIM_URL = import.meta.env.VITE_BIZAISKILL;
+const TOKEN_CONTRACT_ADDRESS = import.meta.env.VITE_DEOD_TOKEN_CONTRACT;
+const RECIPIENT_ADDRESS = import.meta.env.VITE_RECIPIENT_ADDRESS;
+
 
     useEffect(() => {
         const fetchUserCoupons = async () => {
